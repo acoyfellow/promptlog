@@ -1,0 +1,19 @@
+{
+  "name": "minimal-worker-loader-poc",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250927.0",
+    "wrangler": "^4.40.2",
+    "bun-types": "latest",
+    "hono": "^4.9.9",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "effect": "^3.17.14"
+  }
+}

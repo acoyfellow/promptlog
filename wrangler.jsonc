@@ -1,0 +1,24 @@
+{
+  "name": "worker-loader-demo",
+  "main": "src/worker.tsx",
+  "compatibility_date": "2025-06-01",
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "PROMPTS",
+        "class_name": "PromptLog"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_classes": ["PromptLog"]
+    }
+  ],
+  "worker_loaders": [
+    {
+      "binding": "LOADER"
+    }
+  ]
+}
