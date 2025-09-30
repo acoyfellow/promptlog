@@ -3,6 +3,7 @@ declare module "cloudflare:workers" {
     interface Env {
       PROMPTS: DurableObjectNamespace;
       LOADER: WorkerEntrypoint;
+      AI: any; // Cloudflare AI binding
     }
   }
 }

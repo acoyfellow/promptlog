@@ -79,12 +79,27 @@ const endpoint = worker.getEntrypoint();
 const response = await endpoint.fetch(`http://sandbox/?q=${prompt}`);
 ```
 
-## Production Considerations
+## Production Deployment
 
-- Dynamic Worker Loaders are currently in closed beta for production deployment
-- Local development works immediately with Wrangler 4.x
-- Apply for beta access via Cloudflare for production use
-- Consider rate limiting and resource quotas for user-generated code
+**Important**: Dynamic Worker Loaders are currently in **closed beta** for production deployment.
+
+### If you have beta access:
+The project deploys as-is with `wrangler deploy`.
+
+### If you don't have beta access:
+You'll get this error: `binding LOADER of type worker_loader is invalid [code: 10021]`
+
+**Option 1**: Apply for beta access at [Cloudflare's beta program](https://developers.cloudflare.com/workers/runtime-apis/bindings/worker-loaders/)
+
+**Option 2**: Deploy without Worker Loaders for demo purposes:
+```bash
+# Use the production config without worker_loaders
+wrangler deploy --config wrangler.prod.jsonc
+```
+The app will work except for the code execution feature - users can still see the interface and examples.
+
+### Local Development
+Works immediately with Wrangler 4.x - no beta access required.
 
 ## Tech Stack
 
